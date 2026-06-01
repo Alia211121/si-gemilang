@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Si Gemilang - Portal Transparansi BUMDes Motilango</title>
-    <!-- Tailwind CSS v4 Premium UI -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Chart.js Interaktif -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <style>
@@ -44,7 +42,6 @@
 
 <div id="master-wrapper" class="max-w-[1450px] mx-auto space-y-6">
     
-    <!-- HEADER EXECUTIVE GLOBAL -->
     <header class="bg-gradient-to-r from-emerald-800 via-emerald-900 to-teal-950 text-white p-6 rounded-3xl shadow-xl flex flex-col md:flex-row justify-between items-center gap-4 no-print border border-emerald-700/30">
         <div>
             <div class="flex items-center gap-2">
@@ -55,7 +52,7 @@
         </div>
         <div class="flex gap-2">
             <button id="btn-sync-cloud" class="bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-2.5 font-bold rounded-xl shadow-md text-xs transition cursor-pointer" onclick="SinkronisasiDataCloud()">
-                🔄 Mode Offline
+                🔄 Segarkan Data
             </button>
             <button id="btn-login-admin" class="bg-white text-emerald-900 hover:bg-emerald-50 px-6 py-2.5 font-bold rounded-xl shadow-md transition-all cursor-pointer flex items-center gap-2 border border-slate-200" onclick="toggleMasterAdmin()">
                 🔐 Mode Admin
@@ -63,13 +60,11 @@
         </div>
     </header>
 
-    <!-- NOTIFIKASI INFORMASI TRANS-DIGITAL -->
     <div class="bg-blue-50 border border-blue-200 p-4 rounded-2xl flex items-center gap-3 no-print text-xs md:text-sm text-blue-800 font-medium">
         <span>📢</span>
         <p><strong>Informasi Warga:</strong> Halaman ini menampilkan neraca keuangan asli kluster ketahanan pangan (cabe rawit, bawal, nila) dan sektor reguler mitra BUMDes Gemilang binaan Bupati Ismet Mile.</p>
     </div>
 
-    <!-- NAVIGASI TAB MENU (FIX VISIBILITY & CLICKABLE LOGIC) -->
     <nav class="flex bg-slate-200/60 backdrop-blur-md p-1.5 rounded-2xl gap-2 no-print shadow-xs border border-slate-300/30">
         <button id="btn-tab-keuangan" class="tab-link flex-1 bg-emerald-800 text-white font-bold py-3 px-4 rounded-xl shadow-xs transition-all cursor-pointer" onclick="bukaTab(event, 'tab-keuangan')">
             1. Konsolidasi Buku Kas & SHU
@@ -82,9 +77,7 @@
         </button>
     </nav>
 
-    <!-- ==================== TAB 1: KONSOLIDASI & KAS SHU ==================== -->
     <div id="tab-keuangan" class="tab-content block space-y-6">
-        <!-- INDIKATOR KARTU MODERN -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 no-print">
             <div class="bg-white p-5 rounded-2xl shadow-xs border-l-6 border-amber-500">
                 <p class="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Kluster A: Ketahanan Pangan</p>
@@ -108,7 +101,6 @@
             </div>
         </div>
 
-        <!-- ALOKASI SHU -->
         <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-200 no-print space-y-4">
             <h2 class="text-sm font-bold text-slate-700 uppercase tracking-wider flex items-center gap-2">📊 Alokasi Regulasi SHU (AD/ART Mandat Desa)</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -139,11 +131,9 @@
             </div>
         </div>
 
-        <!-- LAYOUT SPLIT -->
         <div class="main-layout-split grid grid-cols-1 gap-6" id="layout-keuangan">
-            <!-- FORM INPUT ADMIN (DIKUNCI PIN) -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 admin-only hidden space-y-4 h-fit">
-                <h2 class="text-md font-bold text-slate-800 uppercase tracking-wide border-b pb-2">✍ Harus Entri Kas Admin</h2>
+                <h2 class="text-md font-bold text-slate-800 uppercase tracking-wide border-b pb-2">✍ Harris Entri Kas Admin</h2>
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Tanggal</label><input type="date" id="tgl_transaksi"></div>
                 <div class="form-group">
                     <label class="text-xs font-bold text-slate-600 uppercase">Arus Kas</label>
@@ -172,10 +162,8 @@
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Keterangan Bukti Nota</label><textarea id="keterangan" rows="2" placeholder="Tulis rincian transaksi..."></textarea></div>
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Nominal Uang (Rp)</label><input type="number" id="nominal" placeholder="0"></div>
                 <button class="w-full bg-emerald-800 text-white font-bold py-2.5 rounded-xl hover:bg-emerald-900 shadow-sm transition cursor-pointer" onclick="tambahTransaksiKeuangan()">Simpan ke Buku Jurnal & Cloud</button>
-                <button class="w-full bg-rose-600/10 text-rose-700 hover:bg-rose-600 hover:text-white text-xs py-2 font-bold rounded-lg transition cursor-pointer mt-2" onclick="resetKas()">Kosongkan Semua Data Pembukuan (Nol)</button>
             </div>
 
-            <!-- GRAFIK & KAS TABEL (DIAKSES WARGA) -->
             <div class="space-y-6 flex-1">
                 <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-200 no-print">
                     <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">📈 Monitoring Komparatif Hasil Kluster</h4>
@@ -207,7 +195,6 @@
         </div>
     </div>
 
-    <!-- ==================== TAB 2: SURAT PERMINTAAN PEMBAYARAN (SPP) ==================== -->
     <div id="tab-spp" class="tab-content hidden">
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 no-print space-y-4">
             <h2 class="text-md font-bold text-slate-800 uppercase tracking-wide border-b pb-2">📋 Penyusunan Lembar Surat Permintaan Pembayaran (SPP)</h2>
@@ -223,7 +210,7 @@
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Tanggal Bukti SPP</label><input type="text" id="spp_tanggal" value="31 MEI 2026"></div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 items-end bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <div class="sm:col-span-2 form-group"><label class="text-xs font-bold text-slate-600 uppercase">Uraian Belanja Fisik Proyek</label><input type="text" id="spp_item_ur" placeholder="Contoh: Pembelian bibit cabai rawit unggul hibrida"></div>
+                <div class="sm:col-span-2 form-group"><label class="text-xs font-bold text-slate-600 uppercase">Uraian Belanja Fisik Proyek</label><input type="text" id="spp_item_ur" placeholder="Contoh: Pembelian bibit cabai rawit"></div>
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Pagu RAB (Rp)</label><input type="number" id="spp_item_pg" placeholder="0"></div>
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Cair Saat Ini (Rp)</label><input type="number" id="spp_item_sk" placeholder="0"></div>
             </div>
@@ -232,11 +219,10 @@
                 <thead class="bg-slate-100 font-bold text-xs uppercase"><tr><th class="p-2.5">Uraian Kebutuhan</th><th class="p-2.5 text-right">Pagu Plafon</th><th class="p-2.5 text-right">Permintaan Sekarang</th><th class="p-2.5 text-center">Aksi</th></tr></thead>
                 <tbody id="tbody-spp-temporary" class="divide-y divide-slate-100 font-medium"></tbody>
             </table>
-            <button class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-xl shadow-md text-base transition-all cursor-pointer" onclick="prosesGenerasikanDokumenSPP()">Generasikan Formulir Cetak SPP Resmi [Landscape]</button>
+            <button class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-xl shadow-md text-base transition-all cursor-pointer" onclick="prosesGenerasikanDokumenSPP()">Generasikan Formulir Cetak SPP Resmi</button>
         </div>
     </div>
 
-    <!-- ==================== TAB 3: MONITORING & BERKAS RAB ==================== -->
     <div id="tab-rab" class="tab-content hidden space-y-6">
         <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-200 no-print space-y-6">
             <div>
@@ -246,7 +232,7 @@
             <div class="overflow-x-auto">
                 <table class="w-full text-sm text-left">
                     <thead class="bg-emerald-800 text-white font-bold uppercase text-xs tracking-wider">
-                        <tr><th class="p-3.5 rounded-l-xl">Komoditas Kebijitas Desa</th><th class="p-3.5 text-right">Pagu Alokasi RAB</th><th class="p-3.5 text-right">Total Serapan (SPP Cair)</th><th class="p-3.5 text-right">Sisa Anggaran Tersedia</th><th class="p-3.5 text-center rounded-r-xl">Persentase (%)</th></tr>
+                        <tr><th class="p-3.5 rounded-l-xl">Komoditas Kebijakan Desa</th><th class="p-3.5 text-right">Pagu Alokasi RAB</th><th class="p-3.5 text-right">Total Serapan (SPP Cair)</th><th class="p-3.5 text-right">Sisa Anggaran Tersedia</th><th class="p-3.5 text-center rounded-r-xl">Persentase (%)</th></tr>
                     </thead>
                     <tbody id="tbody-monitoring-rab-real-time" class="divide-y divide-slate-100 font-medium"></tbody>
                 </table>
@@ -259,15 +245,22 @@
                 <div class="form-group">
                     <label class="text-xs font-bold text-slate-600 uppercase">Sektor Komoditas Proyek</label>
                     <select id="rab_komoditas">
-                        <option value="KEBUN CABE RAWIT (ALOKASI TOTAL: Rp 69.194.000)">Kebun Cabe Rawit</option>
-                        <option value="KOLAM IKAN BAWAL (ALOKASI TOTAL: Rp 25.950.000)">Kolam Ikan Bawal</option>
-                        <option value="KOLAM IKAN NILA (ALOKASI TOTAL: Rp 13.856.000)">Kolam Ikan Nila</option>
+                        <option value="KEBUN CABE RAWIT (ALOKASI TOTAL: Rp 70.000.000)">Kebun Cabe Rawit</option>
+                        <option value="KOLAM IKAN BAWAL (ALOKASI TOTAL: Rp 20.000.000)">Kolam Ikan Bawal</option>
+                        <option value="KOLAM IKAN NILA (ALOKASI TOTAL: Rp 20.000.000)">Kolam Ikan Nila</option>
                     </select>
                 </div>
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Proyeksi Hasil Kotor (Gross Revenue) (Rp)</label><input type="number" id="rab_gross" placeholder="0"></div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 items-end bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Kategori Anggaran</label><select id="rab_item_kat"><option value="1">Kategori 1: Sewa Lahan & Modal Investasi</option><option value="2">Kategori 2: Belanja Saprotan/Material</option><option value="3">Kategori 3: HOK / Upah Kelompok Kerja</option></select></div>
+                <div class="form-group">
+                    <label class="text-xs font-bold text-slate-600 uppercase">Kategori Anggaran</label>
+                    <select id="rab_item_kat">
+                        <option value="1">Kategori 1: Sewa Lahan & Modal Investasi</option>
+                        <option value="2">Kategori 2: Belanja Saprotan/Material</option>
+                        <option value="3">Kategori 3: HOK / Upah Kelompok Kerja</option>
+                    </select>
+                </div>
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Uraian Pekerjaan/Bahan</label><input type="text" id="rab_item_ur" placeholder="Contoh: Pengadaan Pupuk NPK"></div>
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Volume</label><input type="number" id="rab_item_vol" placeholder="0"></div>
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Satuan</label><input type="text" id="rab_item_sat" placeholder="kg/HOK/Paket"></div>
@@ -280,13 +273,11 @@
                 <thead class="bg-slate-50 font-bold text-xs uppercase"><tr><th class="p-2">Kat</th><th>Uraian</th><th class="text-center">Vol</th><th class="text-center">Satuan</th><th class="text-right">Harga</th><th class="text-right">Total</th><th class="text-center">Aksi</th></tr></thead>
                 <tbody id="tbody-rab-temporary" class="divide-y divide-slate-100 font-medium"></tbody>
             </table>
-            <button class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-xl shadow-md text-base transition cursor-pointer" onclick="prosesGenerasikanDokumenRAB()">Generasikan Berkas Dokumen RAB Resmi [Landscape]</button>
+            <button class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-xl shadow-md text-base transition cursor-pointer" onclick="prosesGenerasikanDokumenRAB()">Generasikan Berkas Dokumen RAB Resmi</button>
         </div>
     </div>
 </div>
 
-<!-- ==================== AREA OUTPUT CETAK STANDAR KEMENTERIAN ==================== -->
-<!-- DOKUMEN SPP -->
 <div id="dokumen-spp-print" class="area-print-document">
     <div class="kop-official">
         <p style="font-size: 1.15rem;">SURAT PERMINTAAN PEMBAYARAN (SPP)</p>
@@ -319,7 +310,6 @@
     <div style="text-align:center; margin-top:25px;" class="no-print gap-4 flex justify-center"><button onclick="window.print()" style="max-width:250px; background:#1e3a8a; color:white; padding:12px; border-radius:12px; font-weight:bold; cursor:pointer;">🖨️ Cetak Dokumen SPP</button> <button type="button" onclick="tutupCetak()" style="max-width:150px; background:#64748b; color:white; padding:12px; border-radius:12px; font-weight:bold; cursor:pointer;">Kembali</button></div>
 </div>
 
-<!-- DOKUMEN RAB -->
 <div id="dokumen-rab-print" class="area-print-document">
     <div class="kop-official" style="border:none; margin-bottom:5px;">
         <p style="font-size: 1.15rem;">RENCANA ANGGARAN BIAYA (RAB) BUMDES GEMILANG</p>
@@ -352,7 +342,6 @@
     <div style="text-align:center; margin-top:25px;" class="no-print gap-4 flex justify-center"><button onclick="window.print()" style="max-width:250px; background:#1e3a8a; color:white; padding:12px; border-radius:12px; font-weight:bold; cursor:pointer;">🖨️ Cetak Berkas RAB</button> <button type="button" onclick="tutupCetak()" style="max-width:150px; background:#64748b; color:white; padding:12px; border-radius:12px; font-weight:bold; cursor:pointer;">Kembali</button></div>
 </div>
 
-<!-- LOGIKA SISTEM UTAMA -->
 <script>
     const URL_GOOGLE_SCRIPT_CLOUD = "https://script.google.com/macros/s/AKfycbz...RUBAH_DENGAN_LINK_ANDA/exec";
     const PlafonPanganRAB = { 'Kebun Cabe Rawit': 70000000, 'Kolam Ikan Bawal': 20000000, 'Kolam Ikan Nila': 20000000 };
@@ -379,14 +368,13 @@
         }
     }
 
-    // LOGIKA SAKLAR ADMIN PINTAR (MEMBUKA ABSOLUT AKSES TAB SPP & RAB)
     function toggleMasterAdmin() {
         if(adminAktif) {
             adminAktif = false;
             document.getElementById('btn-login-admin').innerText = "🔐 Mode Admin";
             document.getElementById('btn-login-admin').className = "bg-white text-emerald-900 px-6 py-2.5 font-bold rounded-xl shadow-md border cursor-pointer";
             document.querySelectorAll('.admin-only').forEach(el => el.classList.add('hidden'));
-            bukaTab(null, 'tab-keuangan'); // Paksa kembali ke tab 1 saat logout
+            bukaTab(null, 'tab-keuangan');
         } else {
             let pinInput = prompt("Masukkan PIN Otorisasi Pengurus:");
             if(pinInput && pinInput.trim() === "2026") {
@@ -400,28 +388,17 @@
     }
 
     function bukaTab(evt, tabName) {
-        // Sembunyikan semua tab content terlebih dahulu
         document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-        
-        // Atur style tombol pasif
         document.querySelectorAll('.tab-link').forEach(el => {
             el.className = "tab-link flex-1 bg-slate-300/60 text-slate-700 font-bold py-3 px-4 rounded-xl hover:bg-slate-300 transition-all cursor-pointer";
         });
-
-        // Munculkan tab target yang dipilih
         document.getElementById(tabName).classList.remove('hidden');
-
-        // Atur style tombol aktif
         if(evt) {
             evt.currentTarget.className = "tab-link flex-1 bg-emerald-800 text-white font-bold py-3 px-4 rounded-xl shadow-xs transition-all cursor-pointer";
         } else {
             document.getElementById('btn-' + tabName).className = "tab-link flex-1 bg-emerald-800 text-white font-bold py-3 px-4 rounded-xl shadow-xs transition-all cursor-pointer";
         }
         updateSistemTampilan();
-    }
-
-    function getBelanjaUnitTerpakai(unitName) {
-        let total = 0; databaseKas.forEach(t => { if(t.unit === unitName && t.jenis === 'keluar') total += t.nominal; }); return total;
     }
 
     function tambahTransaksiKeuangan() {
@@ -435,7 +412,7 @@
         fetch(URL_GOOGLE_SCRIPT_CLOUD, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }).then(() => {
             databaseKas.push(payload); localStorage.setItem('bumdes_v4_sigemilang_db', JSON.stringify(databaseKas)); updateSistemTampilan();
             document.getElementById('keterangan').value = ''; document.getElementById('nominal').value = '';
-            alert("Data Berhasil Disimpan ke Cloud!");
+            alert("Data Berhasil Disimpan!");
         });
     }
 
@@ -519,15 +496,28 @@
     }
 
     function tambahItemTabelRab() {
-       let kat = document.getElementById('rab_item_kat').value, ur = document.getElementById('rab_item_ur').value, vol = parseFloat(document.getElementById('rab_item_vol').value) || 0, sat = document.getElementById('rab_item_sat').value, hrg = parseFloat(document.getElementById('rab_item_hrg').value) || 0;
-     if(!ur || vol <= 0 || hrg <= 0) return; temporaryRab.push({ kat, urayan: ur, vol, sat, hrg, total: (vol*hrg) });
-    document.getElementById('rab_item_ur').value = ''; document.getElementById('rab_item_vol').value = ''; document.getElementById('rab_item_sat').value = ''; document.getElementById('rab_item_hrg').value = '';
-let tb = document.getElementById('tbody-rab-temporary'); tb.innerHTML = '';
-temporaryRab.forEach((item, idx) => {
-    tb.innerHTML += `<tr><td class="p-2">Kat ${item.kat}</td><td>${item.urayan}</td><td class="text-center">${item.vol}</td><td class="text-center">${item.sat}</td><td class="text-right">${item.hrg.toLocaleString('id-ID')}</td><td class="text-right font-bold">${item.total.toLocaleString('id-ID')}</td><td class="text-center"><button onclick="temporaryRab.splice(${idx},1); tambahItemTabelRab();" class="text-rose-600 font-bold text-xs cursor-pointer bg-rose-50 px-2 py-1 rounded-md">Hapus</button></td></tr>`;
-}); // Pastikan ada tanda tutup kurung kurawal ini di paling bawah fungsi
+        let kat = document.getElementById('rab_item_kat').value;
+        let ur = document.getElementById('rab_item_ur').value;
+        let vol = parseFloat(document.getElementById('rab_item_vol').value) || 0;
+        let sat = document.getElementById('rab_item_sat').value;
+        let hrg = parseFloat(document.getElementById('rab_item_hrg').value) || 0;
+        
+        if(!ur || vol <= 0 || hrg <= 0) { alert("Lengkapi input item RAB!"); return; }
+        
+        temporaryRab.push({ kat: kat, urayan: ur, vol: vol, sat: sat, hrg: hrg, total: (vol*hrg) });
+        
+        document.getElementById('rab_item_ur').value = ''; 
+        document.getElementById('rab_item_vol').value = ''; 
+        document.getElementById('rab_item_sat').value = ''; 
+        document.getElementById('rab_item_hrg').value = '';
+        
+        let tb = document.getElementById('tbody-rab-temporary'); 
+        tb.innerHTML = '';
+        temporaryRab.forEach((item, idx) => {
+            tb.innerHTML += `<tr><td class="p-2">Kat ${item.kat}</td><td>${item.urayan}</td><td class="text-center">${item.vol}</td><td class="text-center">${item.sat}</td><td class="text-right">${item.hrg.toLocaleString('id-ID')}</td><td class="text-right font-bold">${item.total.toLocaleString('id-ID')}</td><td class="text-center"><button onclick="temporaryRab.splice(${idx},1); tambahItemTabelRab();" class="text-rose-600 font-bold text-xs cursor-pointer bg-rose-50 px-2 py-1 rounded-md">Hapus</button></td></tr>`;
         });
     }
+    
     function prosesGenerasikanDokumenRAB() {
         if(temporaryRab.length === 0) return alert("Item RAB masih kosong!");
         document.getElementById('out_rab_komoditas').innerText = document.getElementById('rab_komoditas').value.toUpperCase();
