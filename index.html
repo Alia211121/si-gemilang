@@ -519,12 +519,13 @@
     }
 
     function tambahItemTabelRab() {
-        let kat = document.getElementById('rab_item_kat').value, ur = document.getElementById('rab_item_urered' || 'rab_item_ur').value, vol = parseFloat(document.getElementById('rab_item_vol').value) || 0, sat = document.getElementById('rab_item_sat').value, hrg = parseFloat(document.getElementById('rab_item_hrg').value) || 0;
-        if(!ur || vol <= 0 || hrg <= 0) return; temporaryRab.push({ kat, urayan: ur, vol, sat, hrg, total: (vol*hrg) });
-        document.getElementById('rab_item_ur').value = ''; document.getElementById('rab_item_vol').value = ''; document.getElementById('rab_item_sat').value = ''; document.getElementById('rab_item_hrg').value = '';
-        let tb = document.getElementById('tbody-rab-temporary'); tb.innerHTML = '';
-        temporaryRab.forEach((item, idx) => {
-            tb.innerHTML += `<tr><td class="p-2">Kat ${item.kat}</td><td>${item.urayan}</td><td class="text-center">${item.vol}</td><td class="text-center">${item.sat}</td><td class="text-right">${item.hrg.toLocaleString('id-ID')}</td><td class="text-right font-bold">${item.total.toLocaleString('id-ID')}</td><td class="text-center"><button onclick="temporaryRab.splice(${idx},1); tambahItemTabelRab();" class="text-rose-600 font-bold text-xs cursor-pointer bg-rose-50 px-2 py-1 rounded-md">Hapus</button></td></tr>`;
+       let kat = document.getElementById('rab_item_kat').value, ur = document.getElementById('rab_item_ur').value, vol = parseFloat(document.getElementById('rab_item_vol').value) || 0, sat = document.getElementById('rab_item_sat').value, hrg = parseFloat(document.getElementById('rab_item_hrg').value) || 0;
+     if(!ur || vol <= 0 || hrg <= 0) return; temporaryRab.push({ kat, urayan: ur, vol, sat, hrg, total: (vol*hrg) });
+    document.getElementById('rab_item_ur').value = ''; document.getElementById('rab_item_vol').value = ''; document.getElementById('rab_item_sat').value = ''; document.getElementById('rab_item_hrg').value = '';
+let tb = document.getElementById('tbody-rab-temporary'); tb.innerHTML = '';
+temporaryRab.forEach((item, idx) => {
+    tb.innerHTML += `<tr><td class="p-2">Kat ${item.kat}</td><td>${item.urayan}</td><td class="text-center">${item.vol}</td><td class="text-center">${item.sat}</td><td class="text-right">${item.hrg.toLocaleString('id-ID')}</td><td class="text-right font-bold">${item.total.toLocaleString('id-ID')}</td><td class="text-center"><button onclick="temporaryRab.splice(${idx},1); tambahItemTabelRab();" class="text-rose-600 font-bold text-xs cursor-pointer bg-rose-50 px-2 py-1 rounded-md">Hapus</button></td></tr>`;
+}); // Pastikan ada tanda tutup kurung kurawal ini di paling bawah fungsi
         });
     }
     function prosesGenerasikanDokumenRAB() {
