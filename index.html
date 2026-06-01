@@ -55,7 +55,7 @@
         </div>
         <div class="flex gap-2">
             <button id="btn-sync-cloud" class="bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-2.5 font-bold rounded-xl shadow-md text-xs transition cursor-pointer" onclick="SinkronisasiDataCloud()">
-                🔄 Segarkan Data
+                🔄 Mode Offline
             </button>
             <button id="btn-login-admin" class="bg-white text-emerald-900 hover:bg-emerald-50 px-6 py-2.5 font-bold rounded-xl shadow-md transition-all cursor-pointer flex items-center gap-2 border border-slate-200" onclick="toggleMasterAdmin()">
                 🔐 Mode Admin
@@ -143,7 +143,7 @@
         <div class="main-layout-split grid grid-cols-1 gap-6" id="layout-keuangan">
             <!-- FORM INPUT ADMIN (DIKUNCI PIN) -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 admin-only hidden space-y-4 h-fit">
-                <h2 class="text-md font-bold text-slate-800 uppercase tracking-wide border-b pb-2">✍ Harris Entri Kas Admin</h2>
+                <h2 class="text-md font-bold text-slate-800 uppercase tracking-wide border-b pb-2">✍ Harus Entri Kas Admin</h2>
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Tanggal</label><input type="date" id="tgl_transaksi"></div>
                 <div class="form-group">
                     <label class="text-xs font-bold text-slate-600 uppercase">Arus Kas</label>
@@ -259,9 +259,9 @@
                 <div class="form-group">
                     <label class="text-xs font-bold text-slate-600 uppercase">Sektor Komoditas Proyek</label>
                     <select id="rab_komoditas">
-                        <option value="KEBUN CABE RAWIT (ALOKASI TOTAL: Rp 70.000.000)">Kebun Cabe Rawit</option>
-                        <option value="KOLAM IKAN BAWAL (ALOKASI TOTAL: Rp 20.000.000)">Kolam Ikan Bawal</option>
-                        <option value="KOLAM IKAN NILA (ALOKASI TOTAL: Rp 20.000.000)">Kolam Ikan Nila</option>
+                        <option value="KEBUN CABE RAWIT (ALOKASI TOTAL: Rp 69.194.000)">Kebun Cabe Rawit</option>
+                        <option value="KOLAM IKAN BAWAL (ALOKASI TOTAL: Rp 25.950.000)">Kolam Ikan Bawal</option>
+                        <option value="KOLAM IKAN NILA (ALOKASI TOTAL: Rp 13.856.000)">Kolam Ikan Nila</option>
                     </select>
                 </div>
                 <div class="form-group"><label class="text-xs font-bold text-slate-600 uppercase">Proyeksi Hasil Kotor (Gross Revenue) (Rp)</label><input type="number" id="rab_gross" placeholder="0"></div>
