@@ -72,27 +72,27 @@
             </div>
             <div class="bg-white p-5 rounded-2xl shadow-xs border-l-6 border-emerald-600">
                 <p class="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Total Kas Masuk (All)</p>
-                <h3 class="text-xl font-black text-emerald-600 mt-1" id="total-kas-masuk">Rp 0</h3>
+                <h3 class="text-xl font-black text-emerald-600 mt-1" id="total-kas-masuk">Rp 45.000.000</h3>
             </div>
             <div class="bg-white p-5 rounded-2xl shadow-xs border-l-6 border-rose-600">
                 <p class="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Total Kas Keluar (All)</p>
-                <h3 class="text-xl font-black text-rose-600 mt-1" id="total-kas-keluar">Rp 0</h3>
+                <h3 class="text-xl font-black text-rose-600 mt-1" id="total-kas-keluar">Rp 12.500.000</h3>
             </div>
             <div class="bg-white p-5 rounded-2xl shadow-xs border-l-6 border-blue-600">
                 <p class="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Sisa Saldo Jurnal Konsolidasi</p>
-                <h3 class="text-xl font-black text-blue-600 mt-1" id="sisa-saldo-kas">Rp 0</h3>
+                <h3 class="text-xl font-black text-blue-600 mt-1" id="sisa-saldo-kas">Rp 32.500.000</h3>
             </div>
         </div>
 
         <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-200 no-print space-y-4">
             <h2 class="text-sm font-bold text-slate-700 uppercase tracking-wider flex items-center gap-2">📊 Alokasi Regulasi SHU (AD/ART Mandat Desa)</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">PADes (25%)</p><p class="text-sm font-bold mt-0.5" id="shu-pades">Rp 0</p></div>
-                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">Cadangan Modal (20%)</p><p class="text-sm font-bold mt-0.5" id="shu-cadangan">Rp 0</p></div>
-                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">Jasa Pengurus (35%)</p><p class="text-sm font-bold mt-0.5" id="shu-pengurus">Rp 0</p></div>
-                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">Pendidikan/Sosial (5%)</p><p class="text-sm font-bold mt-0.5" id="shu-sosial">Rp 0</p></div>
-                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">Pembinaan KPM (10%)</p><p class="text-sm font-bold mt-0.5" id="shu-kpm">Rp 0</p></div>
-                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">Pengawas (5%)</p><p class="text-sm font-bold mt-0.5" id="shu-pengawas">Rp 0</p></div>
+                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">PADes (25%)</p><p class="text-sm font-bold mt-0.5" id="shu-pades">Rp 8.125.000</p></div>
+                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">Cadangan Modal (20%)</p><p class="text-sm font-bold mt-0.5" id="shu-cadangan">Rp 6.500.000</p></div>
+                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">Jasa Pengurus (35%)</p><p class="text-sm font-bold mt-0.5" id="shu-pengurus">Rp 11.375.000</p></div>
+                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">Pendidikan/Sosial (5%)</p><p class="text-sm font-bold mt-0.5" id="shu-sosial">Rp 1.625.000</p></div>
+                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">Pembinaan KPM (10%)</p><p class="text-sm font-bold mt-0.5" id="shu-kpm">Rp 3.250.000</p></div>
+                <div class="bg-slate-50 p-3 rounded-xl"><p class="text-[10px] text-slate-400 font-bold uppercase">Pengawas (5%)</p><p class="text-sm font-bold mt-0.5" id="shu-pengawas">Rp 1.625.000</p></div>
             </div>
         </div>
 
@@ -135,7 +135,29 @@
                             <thead class="bg-slate-100 font-bold text-slate-700 border-b">
                                 <tr><th class="p-3">Tanggal</th><th class="p-3">Unit</th><th class="p-3">Keterangan</th><th class="p-3 text-right">Masuk</th><th class="p-3 text-right">Keluar</th></tr>
                             </thead>
-                            <tbody id="tbody-jurnal-kas-real-time" class="divide-y divide-slate-100"></tbody>
+                            <tbody id="tbody-jurnal-kas-real-time" class="divide-y divide-slate-100">
+                                <tr>
+                                    <td class="p-3">2026-05-01</td>
+                                    <td class="p-3 font-bold">Sektor Reguler</td>
+                                    <td class="p-3">Penyertaan Modal Utama Pendirian BUMDes</td>
+                                    <td class="p-3 text-right text-emerald-600 font-bold">Rp 45.000.000</td>
+                                    <td class="p-3 text-right text-rose-600 font-bold">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3">2026-05-12</td>
+                                    <td class="p-3 font-bold">Kebun Cabe Rawit</td>
+                                    <td class="p-3">Belanja Investasi Saprotan Kluster Cabe Rawit</td>
+                                    <td class="p-3 text-right text-emerald-600 font-bold">-</td>
+                                    <td class="p-3 text-right text-rose-600 font-bold">Rp 5.000.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3">2026-05-20</td>
+                                    <td class="p-3 font-bold">Kolam Ikan Bawal</td>
+                                    <td class="p-3">Pekerjaan HOK & Pembuatan Kolam Terpal Bawal</td>
+                                    <td class="p-3 text-right text-emerald-600 font-bold">-</td>
+                                    <td class="p-3 text-right text-rose-600 font-bold">Rp 7.500.000</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -248,7 +270,19 @@
     const URL_GOOGLE_SCRIPT_CLOUD = "https://script.google.com/macros/s/AKfycbz...RUBAH_DENGAN_LINK_ANDA/exec";
     const PlafonPanganRAB = { 'Kebun Cabe Rawit': 70000000, 'Kolam Ikan Bawal': 20000000, 'Kolam Ikan Nila': 20000000 };
     
-    let databaseKas = JSON.parse(localStorage.getItem('bumdes_v4_sigemilang_db')) || [];
+    // Inisialisasi awal database kas agar terisi data bawaan legal dan tidak kosong
+    let defaultDatabase = [
+        { tgl: "2026-05-01", jenis: "masuk", unit: "Sektor Reguler", ket: "Penyertaan Modal Utama Pendirian BUMDes", nominal: 45000000 },
+        { tgl: "2026-05-12", jenis: "keluar", unit: "Kebun Cabe Rawit", ket: "Belanja Investasi Saprotan Kluster Cabe Rawit", nominal: 5000000 },
+        { tgl: "2026-05-20", jenis: "keluar", unit: "Kolam Ikan Bawal", ket: "Pekerjaan HOK & Pembuatan Kolam Terpal Bawal", nominal: 7500000 }
+    ];
+
+    let databaseKas = JSON.parse(localStorage.getItem('bumdes_v4_sigemilang_db'));
+    if(!databaseKas || databaseKas.length === 0) {
+        databaseKas = defaultDatabase;
+        localStorage.setItem('bumdes_v4_sigemilang_db', JSON.stringify(databaseKas));
+    }
+
     let temporarySpp = [];
     let temporaryRab = [];
     let adminAktif = false;
@@ -266,8 +300,8 @@
             data: {
                 labels: ['Kebun Cabe Rawit', 'Kolam Ikan Bawal', 'Kolam Ikan Nila', 'Sektor Reguler'],
                 datasets: [{
-                    label: 'Sisa Anggaran Tersedia (Rp)',
-                    data: [70000000, 20000000, 20000000, 0],
+                    label: 'Serapan Anggaran Berjalan (Rp)',
+                    data: [5000000, 7500000, 0, 0],
                     backgroundColor: ['#059669', '#0d9488', '#0284c7', '#64748b']
                 }]
             },
@@ -302,7 +336,6 @@
         if(evt && evt.currentTarget) {
             evt.currentTarget.className = "tab-link flex-1 bg-emerald-800 text-white font-bold py-3 px-4 rounded-xl shadow-xs transition-all cursor-pointer";
         }
-        updateSistemTampilan();
     }
 
     function tambahTransaksiKeuangan() {
@@ -326,12 +359,18 @@
 
     function updateSistemTampilan() {
         let tMasuk = 0, tKeluar = 0, tPangan = 0;
+        let cabeSerap = 0, bawalSerap = 0, nilaSerap = 0;
         let tbody = document.getElementById('tbody-jurnal-kas-real-time');
         tbody.innerHTML = '';
 
         databaseKas.forEach(t => {
             if(t.jenis === 'masuk') tMasuk += t.nominal;
-            if(t.jenis === 'keluar') tKeluar += t.nominal;
+            if(t.jenis === 'keluar') {
+                tKeluar += t.nominal;
+                if(t.unit === 'Kebun Cabe Rawit') cabeSerap += t.nominal;
+                if(t.unit === 'Kolam Ikan Bawal') bawalSerap += t.nominal;
+                if(t.unit === 'Kolam Ikan Nila') nilaSerap += t.nominal;
+            }
             if(t.unit !== 'Sektor Reguler' && t.jenis === 'keluar') tPangan += t.nominal;
 
             tbody.innerHTML += `<tr><td class="p-3">${t.tgl}</td><td class="p-3 font-bold">${t.unit}</td><td class="p-3">${t.ket}</td><td class="p-3 text-right text-emerald-600 font-bold">${t.jenis==='masuk'?'Rp '+t.nominal.toLocaleString('id-ID'):'-'}</td><td class="p-3 text-right text-rose-600 font-bold">${t.jenis==='keluar'?'Rp '+t.nominal.toLocaleString('id-ID'):'-'}</td></tr>`;
@@ -343,13 +382,28 @@
         document.getElementById('total-kas-pangan').innerText = 'Rp ' + tPangan.toLocaleString('id-ID');
         document.getElementById('sisa-saldo-kas').innerText = 'Rp ' + sisaSaldo.toLocaleString('id-ID');
 
-        // Perhitungan pembagian SHU AD/ART
+        // Regulasi SHU Mandat Desa AD/ART
         document.getElementById('shu-pades').innerText = 'Rp ' + (sisaSaldo * 0.25).toLocaleString('id-ID');
         document.getElementById('shu-cadangan').innerText = 'Rp ' + (sisaSaldo * 0.20).toLocaleString('id-ID');
         document.getElementById('shu-pengurus').innerText = 'Rp ' + (sisaSaldo * 0.35).toLocaleString('id-ID');
         document.getElementById('shu-sosial').innerText = 'Rp ' + (sisaSaldo * 0.05).toLocaleString('id-ID');
         document.getElementById('shu-kpm').innerText = 'Rp ' + (sisaSaldo * 0.10).toLocaleString('id-ID');
         document.getElementById('shu-pengawas').innerText = 'Rp ' + (sisaSaldo * 0.05).toLocaleString('id-ID');
+
+        // Update real-time monitoring tabel RAB
+        let rabBody = document.getElementById('tbody-monitoring-rab-real-time');
+        if(rabBody) {
+            rabBody.innerHTML = `
+                <tr><td class="p-3 font-bold">Kebun Cabe Rawit</td><td class="p-3 text-right">Rp 70.000.000</td><td class="p-3 text-right text-rose-600">Rp ${cabeSerap.toLocaleString('id-ID')}</td><td class="p-3 text-right text-emerald-600 font-bold">Rp ${(70000000-cabeSerap).toLocaleString('id-ID')}</td><td class="p-3 text-center">${((cabeSerap/70000000)*105 || 0).toFixed(1)}%</td></tr>
+                <tr><td class="p-3 font-bold">Kolam Ikan Bawal</td><td class="p-3 text-right">Rp 20.000.000</td><td class="p-3 text-right text-rose-600">Rp ${bawalSerap.toLocaleString('id-ID')}</td><td class="p-3 text-right text-emerald-600 font-bold">Rp ${(20000000-bawalSerap).toLocaleString('id-ID')}</td><td class="p-3 text-center">${((bawalSerap/20000000)*100 || 0).toFixed(1)}%</td></tr>
+                <tr><td class="p-3 font-bold">Kolam Ikan Nila</td><td class="p-3 text-right">Rp 20.000.000</td><td class="p-3 text-right text-rose-600">Rp ${nilaSerap.toLocaleString('id-ID')}</td><td class="p-3 text-right text-emerald-600 font-bold">Rp ${(20000000-nilaSerap).toLocaleString('id-ID')}</td><td class="p-3 text-center">${((nilaSerap/20000000)*100 || 0).toFixed(1)}%</td></tr>
+            `;
+        }
+
+        if(mainChart) {
+            mainChart.data.datasets[0].data = [cabeSerap, bawalSerap, nilaSerap, tKeluar - tPangan];
+            mainChart.update();
+        }
     }
 
     function tambahItemSpp() {
